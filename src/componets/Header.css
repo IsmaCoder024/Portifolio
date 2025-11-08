@@ -1,0 +1,67 @@
+body {
+  place-items: top;
+}
+
+.div-header {
+}
+
+.nav-header {
+  display: flex;
+    background: rgb(63, 153, 171);
+    width: fit-content;
+    float: right;
+    padding: 6px;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin: 5px;
+}
+
+.main{
+    display: flex;
+  flex-wrap: nowrap;
+  margin-top: 100px;
+  gap: 50%;
+  justify-content: center;
+}
+.main-left{
+    margin-left: 0px;
+    justify-self: left;
+    width: 30%;
+    background: tan;
+}
+
+.main-left h1{
+    font-size: 20px;
+    margin-bottom: 0px;
+    
+}
+
+.main-right{
+    margin-left: 0px;
+    justify-self: right;
+     background: tan;
+     width: fit-content;
+}
+
+.main-right h1{
+    font-size: 20px;
+    margin-bottom: 0px;
+    
+}
+
+.div-item{
+    background: indianred;
+   width: fit-content;
+}
+
+.div-item ul{
+    width: fit-content;
+    display: flexbox;
+    flex-direction: column;
+}
