@@ -1,34 +1,39 @@
-import './Homepage.css';
-import Header from "../componets/Header";
+import "./Homepage.css";
+import myPic from "../images/PSX_20240716_200731.jpg";
 import Navigation from "../componets/Navigation";
-import HomeItem from "../componets/HomeItem";
 
-function Homepage(){
+function Homepage() {
+  const links = [
+    { label: "Projects", path: "" },
+    { label: "Repository", path: "" },
+  ];
 
-    const links = [
-        { label: "Projects", path:""},
-        { label: "Repository", path:""}
-    ]
-   
-    return (
-        <>
-        <Header title={"Isma"} theme={"to my portifolio"}/>
-        <Navigation links={links}/>
+  return (
+    <>
+      <Navigation links={links} />
 
-        <div className='main'>
-
-        <div className="main-left">
-            <HomeItem title={"My awesome portifolio"} description={"My awesome portifolio"}/>
+      <div className="main">
+        <div className="hello-div">
+          <h1>
+            Hello,
+            <br />I am Ismail M.
+          </h1>
         </div>
 
-        <div className="main-right">
-               <HomeItem title={"Portfolio"} description={"Free us"} />
+        <div className="pic-div">
+          <img src={myPic} />
         </div>
 
+        <div className="desc-div">
+          <p>
+            A software engineer, I do;
+            <ul>Full stack web designing.</ul>
+            <ul>Mobile app development.</ul>
+          </p>
         </div>
-        
-        </>
-    )
+      </div>
+    </>
+  );
 }
 
 export default Homepage;

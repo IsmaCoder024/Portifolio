@@ -1,0 +1,76 @@
+/* Base container */
+.top-items {
+  position: fixed;
+  display: flex;
+  
+  gap: 25px;
+  padding: 10px 20px;
+  /* background: rgba(0, 0, 0, 0.6); */
+  border-radius: 8px;
+  z-index: 1000;
+  top: 15px;
+  right: 15px;
+  transition: all 0.3s ease;
+}
+
+.top-items a {
+  color: rgb(45, 29, 29);
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-items a:hover {
+  color: #2d4a54;
+}
+
+/* Hamburger toggle (hidden on large screens) */
+.menu-toggle {
+  
+  font-size: 24px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 1100;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive: small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    position: relative;
+    display: block;
+    margin-bottom: 280px;
+  }
+
+  .top-items {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    right: -220px; /* hidden by default */
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 0;
+    padding-top: 60px;
+  }
+
+  .top-items.open {
+    right: 0; /* slides in */
+  }
+
+  .top-items a {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .top-items a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00bfff;
+  }
+}

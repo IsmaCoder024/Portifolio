@@ -1,3 +1,68 @@
+.body{
+    background-color: rgb(167, 126, 50);
+}
+
 .main{
-    background: rgb(210, 96, 96);
+    /* background: firebrick; */
+    width: 80%;
+    margin: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
+
+.hello-div{
+    width: 100%;
+    margin-top: -250px;
+    /* background: rgb(41, 58, 15); */
+}
+
+.hello-div h1{
+    font-size: 76px;
+    text-align: left;
+    justify-self: right;
+    margin: 8px;
+    margin-left: 10px;
+}
+
+.pic-div{
+     width: 100%;
+    /* background: rgb(32, 45, 13); */
+    /* z-index: 900; */
+}
+
+.pic-div img{
+    height: fit-content;
+    width: 500px;
+    border-radius: 50%;
+}
+
+.desc-div{
+    margin-top: -700px;
+     width: 100%;
+    /* background: rgb(21, 26, 167); */
+}
+
+.desc-div p{
+    justify-self: right;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.desc-div p ul{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+    
+.main{
+    
+    grid-template-columns: 1fr;
+        /* margin: 50px auto;  */
+        width: 90%; 
+        position: relative;
+}
+
 }
