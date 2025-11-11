@@ -42,6 +42,7 @@
 /* Responsive: small screens */
 @media (max-width: 768px) {
   .menu-toggle {
+    color: black;
     position: relative;
     display: block;
     margin-bottom: 280px;
@@ -57,6 +58,10 @@
     background: rgba(0, 0, 0, 0.9);
     border-radius: 0;
     padding-top: 60px;
+  }
+
+  .top-items a {
+    color: white;
   }
 
   .top-items.open {
