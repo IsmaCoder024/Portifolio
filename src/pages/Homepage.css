@@ -1,13 +1,15 @@
-.body{
-    background-color: rgb(167, 126, 50);
+
+
+body{
+    background: rgb(62, 50, 27);
 }
 
 .main{
     background: rgb(219, 205, 205);
-    border: 4px solid rgb(212, 196, 196);
-    border-radius: 20px;
-    padding: 25px 8px;
-    width: 80%;
+    /* border: 4px solid rgb(212, 196, 196); */
+    border-radius: 25px;
+    padding: 2% 2%;
+    width: 95%;
     margin: 150px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
@@ -19,7 +21,7 @@
 .hello-div{
     position: relative;
     width: 100%;
-    margin-top: -250px;
+    /* margin-top: -250px; */
     /* background: rgb(41, 58, 15); */
 }
 
@@ -39,13 +41,13 @@
 }
 
 .pic-div img{
-    height: 800px;
+    height: 500px;
     width: 500px;
     border-radius: 50%;
 }
 
 .desc-div{
-    margin-top: -700px;
+    /* margin-top: -700px; */
      width: 100%;
     /* background: rgb(21, 26, 167); */
 }

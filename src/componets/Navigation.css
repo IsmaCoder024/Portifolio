@@ -1,21 +1,24 @@
-/* Base container */
+.top-board{
+  background-color: rgb(26, 49, 26);
+  width: 100%;
+}
+
 .top-items {
   position: fixed;
   display: flex;
-  
-  gap: 25px;
-  padding: 10px 20px;
-  /* background: rgba(0, 0, 0, 0.6); */
+  gap: 10%;
+  padding: 1% 2%;
+  background: rgb(207, 114, 114);
   border-radius: 8px;
   z-index: 1000;
-  top: 15px;
-  right: 15px;
+  top: 0.5;
+  right: 4%;
   transition: all 0.3s ease;
 }
 
 .top-items a {
   color: rgb(45, 29, 29);
-  font-size: 22px;
+  font-size: 110%;
   text-decoration: none;
   font-weight: 500;
 }
@@ -27,13 +30,12 @@
 /* Hamburger toggle (hidden on large screens) */
 .menu-toggle {
   
-  font-size: 24px;
+  font-size: 120%;
   position: fixed;
-  top: 15px;
-  left: 15px;
+  top: 0;
+  left: 2%;
   background: none;
   border: none;
-  color: white;
   z-index: 1100;
   cursor: pointer;
   display: none;
@@ -42,22 +44,22 @@
 /* Responsive: small screens */
 @media (max-width: 768px) {
   .menu-toggle {
-    color: black;
-    position: relative;
+    color: white;
+    position: fixed;
     display: block;
-    margin-bottom: 280px;
   }
 
   .top-items {
     flex-direction: column;
     justify-content: flex-start;
-    width: 200px;
+    gap: 2%;
+    width: 40%;
     height: 100%;
     top: 0;
-    right: -220px; /* hidden by default */
+    right: -100%;
     background: rgba(0, 0, 0, 0.9);
     border-radius: 0;
-    padding-top: 60px;
+    padding-top: 5%;
   }
 
   .top-items a {
@@ -70,7 +72,7 @@
 
   .top-items a {
     display: block;
-    padding: 15px 20px;
+    padding: 4% 1%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
