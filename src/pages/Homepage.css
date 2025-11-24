@@ -10,7 +10,7 @@ body{
     border-radius: 25px;
     padding: 2% 2%;
     width: 95%;
-    margin: 150px;
+    margin-top: 8%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     /* justify-content: center; */
@@ -20,42 +20,43 @@ body{
 
 .hello-div{
     position: relative;
-    width: 100%;
-    /* margin-top: -250px; */
+    width: fit-content;
+    margin-top: 0px;
     /* background: rgb(41, 58, 15); */
+    padding: 0px 0px;
+     left: 30%;
 }
 
 .hello-div h1{
     color: rgb(88, 23, 23);
-    font-size: 76px;
+    font-size: 400%;
     text-align: left;
-    justify-self: right;
-    margin: 8px;
-    margin-left: 10px;
+    justify-self: center;
 }
 
 .pic-div{
      width: 100%;
     /* background: rgb(32, 45, 13); */
-    /* z-index: 900; */
 }
 
 .pic-div img{
-    height: 500px;
-    width: 500px;
+    aspect-ratio: 1/1;
+    width: 80%;
     border-radius: 50%;
 }
 
 .desc-div{
-    /* margin-top: -700px; */
      width: 100%;
     /* background: rgb(21, 26, 167); */
+    position: static;
+    margin-top: -24%;
 }
 
 .desc-div p{
     color: rgb(105, 16, 99);
     font-weight: 700;
     justify-self: right;
+    text-align: left;
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -75,15 +76,16 @@ body{
 
 .hello-div{
     margin-top: 0px;
+    left: 0;
 }
 
 .desc-div{
     align-content: center;
     margin-top: 0px;
-    text-align: left;
+  left: 0;
+}
+.desc-div p{
+  justify-self: center;
 }
 
-.desc-div p ul{
-    text-indent: 0px;
-}
 }
