@@ -43,7 +43,7 @@ function Homepage() {
             <h1>Ismail M Mandai</h1>
             <p className="intro-text">
               Highly motivated  software developer with practical
-              experience in PHP, JavaScript, Java, and Python, applying modern
+              experience in applying modern
               development concepts in academic, personal, and freelance
               projects. Possesses strong problem-solving and analytical skills,
               with a commitment to continuous learning and growth in real-world
