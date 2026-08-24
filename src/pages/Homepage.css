@@ -69,6 +69,90 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
+.desktop-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.desktop-nav-links a {
+  position: relative;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.74);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.desktop-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 184, 15, 0.9), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.desktop-nav-links a:hover {
+  color: #fff;
+}
+
+.desktop-nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.desktop-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.desktop-socials a {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.66);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.desktop-socials a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(99, 184, 15, 0.55);
+  color: #fff;
+  background: rgba(99, 184, 15, 0.08);
+}
+
+.hero-drawer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .hero-nav {
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +187,11 @@ body {
 
 .hero-socials a:hover {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.mobile-nav-toggle,
+.nav-backdrop {
+  display: none;
 }
 
 .hero-content {
@@ -235,12 +324,96 @@ body {
   .hero-shell {
     padding: 0 18px 24px;
     min-height: calc(100vh - 40px);
+    overflow: visible;
   }
 
   .hero-topbar {
-    width: 100%;
-    padding: 14px 18px;
+    display: none;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 3000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(11, 11, 11, 0.92);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2100;
+    width: min(80vw, 280px);
+    height: 100vh;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 72px 18px 24px;
+    background: rgba(16, 16, 16, 0.98);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 22px 0 50px rgba(0, 0, 0, 0.4);
+    transform: translateX(-105%);
+    transition: transform 220ms ease;
+    pointer-events: none;
+    visibility: hidden;
+    overflow-y: auto;
+  }
+
+  .hero-drawer.open {
+    transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: block;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero-nav,
+  .hero-socials {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-nav {
+    gap: 16px;
+  }
+
+  .hero-socials {
+    gap: 14px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .hero-content {
@@ -269,12 +442,27 @@ body {
 }
 
 @media (max-width: 560px) {
+  .mobile-nav-toggle {
+    top: 12px;
+    left: 12px;
+    padding: 10px;
+  }
+
+  .hero-drawer {
+    width: min(84vw, 250px);
+    padding: 68px 14px 20px;
+  }
+
   .hero-nav {
-    gap: 12px 16px;
+    gap: 12px;
   }
 
   .hero-nav a {
     font-size: 0.82rem;
+  }
+
+  .hero-socials a {
+    gap: 10px;
   }
 
   .hero-copy h1 {
@@ -288,5 +476,13 @@ body {
 
   .brand-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 961px) {
+  .mobile-nav-toggle,
+  .nav-backdrop,
+  .hero-drawer {
+    display: none;
   }
 }
