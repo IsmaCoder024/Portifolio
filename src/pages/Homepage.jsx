@@ -1,6 +1,6 @@
 import "./Homepage.css";
 import React, { useState } from "react";
-import myPic from "../images/me.png";
+import myPic from "../images/Me.png";
 import { ChevronRight, Menu, X } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaGithub } from "react-icons/fa";
 
