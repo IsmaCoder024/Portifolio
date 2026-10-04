@@ -1,12 +1,11 @@
 import "./Homepage.css";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import myPic from "../images/Me.png";
 import { ChevronRight, Menu, X } from "lucide-react";
 import {
   FaInstagram,
   FaLinkedin,
-  FaFacebook,
-  FaTwitter,
   FaGithub,
 } from "react-icons/fa6";
 
@@ -16,8 +15,8 @@ const navItems = [
     label: "Repositories",
     href: "https://github.com/IsmaCoder024?tab=repositories",
   },
-  { label: "Projects", href: "/projects" },
-  {label: "About me", href:"/about"},
+  { label: "Projects", to: "/projects" },
+  { label: "About me", to: "/about" },
 ];
 
 const socialLinks = [
@@ -54,16 +53,25 @@ function Homepage() {
         <header className="hero-topbar">
           <div className={`hero-drawer ${isMobileNavOpen ? "open" : ""}`}>
             <nav className="hero-nav" aria-label="Primary">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  link={item.link}
-                  onClick={() => setIsMobileNavOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.to ? (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    onClick={() => setIsMobileNavOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMobileNavOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
             </nav>
 
             <div className="hero-socials" aria-label="Social links">
