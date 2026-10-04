@@ -59,46 +59,50 @@ body {
   z-index: 1;
   width: min(100%, 1070px);
   margin: 0 auto;
-  background: rgba(31, 31, 31, 0.98);
-  border-radius: 0 0 10px 10px;
-  padding: 16px 30px;
+  padding: 18px 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 70%),
+    rgba(31, 31, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
 }
 
-.desktop-nav {
+.hero-drawer {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
-.desktop-nav-links {
+.hero-nav {
   display: flex;
-  align-items: center;
-  gap: 18px;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
 }
 
-.desktop-nav-links a {
+.hero-nav a {
   position: relative;
-  padding: 10px 0;
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.44);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding: 8px 0;
 }
 
-.desktop-nav-links a::after {
+.hero-nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 0;
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(99, 184, 15, 0.9), transparent);
@@ -107,21 +111,21 @@ body {
   transition: transform 180ms ease;
 }
 
-.desktop-nav-links a:hover {
-  color: #fff;
+.hero-nav a:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.desktop-nav-links a:hover::after {
+.hero-nav a:hover::after {
   transform: scaleX(1);
 }
 
-.desktop-socials {
+.hero-socials {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-.desktop-socials a {
+.hero-socials a {
   width: 38px;
   height: 38px;
   display: inline-flex;
@@ -138,55 +142,11 @@ body {
     background 160ms ease;
 }
 
-.desktop-socials a:hover {
+.hero-socials a:hover {
   transform: translateY(-1px);
   border-color: rgba(99, 184, 15, 0.55);
   color: #fff;
   background: rgba(99, 184, 15, 0.08);
-}
-
-.hero-drawer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.hero-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-}
-
-.hero-nav a {
-  color: rgba(255, 255, 255, 0.44);
-  text-decoration: none;
-  font-size: 0.92rem;
-  letter-spacing: 0.08em;
-  text-transform: capitalize;
-}
-
-.hero-nav a:hover {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-socials {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-socials a {
-  color: rgba(255, 255, 255, 0.48);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-socials a:hover {
-  color: rgba(255, 255, 255, 0.85);
 }
 
 .mobile-nav-toggle,
@@ -321,25 +281,21 @@ body {
     padding: 10px 6px 18px;
   }
 
+  .hero-topbar {
+    z-index: 2500;
+  }
+
   .hero-shell {
     padding: 0 18px 24px;
     min-height: calc(100vh - 40px);
     overflow: visible;
   }
 
-  .hero-topbar {
-    display: none;
-  }
-
-  .desktop-nav {
-    display: none;
-  }
-
   .mobile-nav-toggle {
     position: fixed;
     top: 14px;
     left: 14px;
-    z-index: 3000;
+    z-index: 4000;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -358,7 +314,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2100;
+    z-index: 3000;
     width: min(80vw, 280px);
     height: 100vh;
     flex-direction: column;
@@ -410,10 +366,38 @@ body {
     gap: 16px;
   }
 
+  .hero-nav a {
+    letter-spacing: 0.08em;
+    font-size: 0.86rem;
+    width: 100%;
+    padding: 6px 0;
+  }
+
+  .hero-nav a::after {
+    display: none;
+  }
+
   .hero-socials {
     gap: 14px;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-socials a {
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .hero-socials a:hover {
+    transform: none;
+    background: transparent;
+    border-color: transparent;
+    color: #fff;
   }
 
   .hero-content {
@@ -476,13 +460,5 @@ body {
 
   .brand-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 961px) {
-  .mobile-nav-toggle,
-  .nav-backdrop,
-  .hero-drawer {
-    display: none;
   }
 }

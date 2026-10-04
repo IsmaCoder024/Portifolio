@@ -2,20 +2,31 @@ import "./Homepage.css";
 import React, { useState } from "react";
 import myPic from "../images/Me.png";
 import { ChevronRight, Menu, X } from "lucide-react";
-import { FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaGithub } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaFacebook,
+  FaTwitter,
+  FaGithub,
+} from "react-icons/fa6";
 
 const navItems = [
   { label: "Home", href: "#" },
-  { label: "Repositories", href: "https://github.com/IsmaCoder024?tab=repositories" },
-  { label: "Projects", href: "#" },
+  {
+    label: "Repositories",
+    href: "https://github.com/IsmaCoder024?tab=repositories",
+  },
+  { label: "Projects", href: "/projects" },
+  {label: "About me", href:"/about"},
 ];
 
-
 const socialLinks = [
-  { label: "GitHub",  href: "https://github.com/IsmaCoder024" },
-  { label: "LinkedIn",  href: "https://www.linkedin.com/in/isma-mandai-8b1a87366/" },
-  { label: "Instagram",  href: "https://www.instagram.com/being_isma_" },
-
+  { label: "Github", href: "https://github.com/IsmaCoder024" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/isma-mandai-8b1a87366/",
+  },
+  { label: "Instagram", href: "https://www.instagram.com/being_isma_" },
 ];
 
 function Homepage() {
@@ -39,48 +50,23 @@ function Homepage() {
         onClick={() => setIsMobileNavOpen(false)}
       />
 
-      <div className={`hero-drawer ${isMobileNavOpen ? "open" : ""}`}>
-        <nav className="hero-nav" aria-label="Primary">
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} onClick={() => setIsMobileNavOpen(false)}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="hero-socials" aria-label="Social links">
-          {socialLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              aria-label={label}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileNavOpen(false)}
-            >
-              <span>{label}</span>
-              {label === "LinkedIn" && <FaLinkedin />}
-              {label === "Instagram" && <FaInstagram />}
-              {label === "Twitter" && <FaTwitter />}
-              {label === "Facebook" && <FaFacebook />}
-              {label === "Github" && <FaGithub />}
-            </a>
-          ))}
-        </div>
-      </div>
-
       <section className="hero-shell" aria-label="Portfolio introduction">
         <header className="hero-topbar">
-          <div className="desktop-nav" aria-label="Desktop navigation">
-            <nav className="desktop-nav-links" aria-label="Primary">
+          <div className={`hero-drawer ${isMobileNavOpen ? "open" : ""}`}>
+            <nav className="hero-nav" aria-label="Primary">
               {navItems.map((item) => (
-                <a key={item.label} href={item.href}>
+                <a
+                  key={item.label}
+                  href={item.href}
+                  link={item.link}
+                  onClick={() => setIsMobileNavOpen(false)}
+                >
                   {item.label}
                 </a>
               ))}
             </nav>
 
-            <div className="desktop-socials" aria-label="Social links">
+            <div className="hero-socials" aria-label="Social links">
               {socialLinks.map(({ label, href }) => (
                 <a
                   key={label}
@@ -88,12 +74,11 @@ function Homepage() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => setIsMobileNavOpen(false)}
                 >
+                  {label === "Github" && <FaGithub />}
                   {label === "LinkedIn" && <FaLinkedin />}
                   {label === "Instagram" && <FaInstagram />}
-                  {label === "Twitter" && <FaTwitter />}
-                  {label === "Facebook" && <FaFacebook />}
-                  {label === "Github" && <FaGithub />}
                 </a>
               ))}
             </div>
@@ -104,15 +89,18 @@ function Homepage() {
           <div className="hero-copy">
             <h1>Ismail Mandai</h1>
             <p className="intro-text">
-              Highly motivated  software developer with practical
-              experience in applying modern
-              development concepts in academic, personal, and freelance
-              projects. Possesses strong problem-solving and analytical skills,
-              with a commitment to continuous learning and growth in real-world
-              software development environments.
+              Highly motivated software developer with practical experience in
+              applying modern development concepts in academic, personal, and
+              freelance projects. Possesses strong problem-solving and
+              analytical skills, with a commitment to continuous learning and
+              growth in real-world software development environments.
             </p>
-            <a className="cta-button" href="https://wa.me/255768139112" target="_blank"
-            rel="noopener noreferrer">
+            <a
+              className="cta-button"
+              href="https://wa.me/255768139112"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Contact Me
               {/* Let&apos;s get started */}
               <ChevronRight size={18} />
@@ -125,8 +113,6 @@ function Homepage() {
             </div>
           </div>
         </div>
-
-       
       </section>
     </main>
   );
